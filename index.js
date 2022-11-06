@@ -15,7 +15,7 @@ console.log(generateDependencyReport())
 // .env & yt cookie
 
 var ytCookiePath = __dirname + "/yt-token.js"
-var ytCookie
+var ytCookie = ""
 
 if (fs.existsSync(ytCookiePath)) {
     ytCookie = require(ytCookiePath)
@@ -72,7 +72,7 @@ distube.on("error", (channel, error) => {
 })
 
 distube.on("playSong", (queue, song) => {
-    queue.textChannel.send(`Играет: **${song.name}**\nНа канале: ${queue.voiceChannel}\nЗапросил: **${song.user}**`)
+    queue.textChannel.send(`Играет: **${song.name}**\nНа канале: ${queue.voiceChannel}\nЗапросил: **${song.member.nickname}**`)
 })
 
 distube.on("addSong", (queue, song) => {
@@ -80,11 +80,15 @@ distube.on("addSong", (queue, song) => {
         return
     }
 
-    queue.textChannel.send(`${song.user}, песня добавлена в очередь! **${song.name}**`)
+    queue.textChannel.send(`${song.member.nickname}, песня **${song.name}** добавлена в очередь!`)
 })
 
 distube.on("searchNoResult", (message) => {
     message.channel.send("Ничего не найдено!")
+})
+
+distube.on("addList", (queue, playlist) => {
+    queue.textChannel.send(`${playlist.member.nickname}, плейлист **${playlist.name}** добавлен в очередь!`)
 })
 
 // catch bot error
