@@ -24,7 +24,7 @@ execute = async (client, interaction, distube) => {
 
     // set volume
 
-    queue.setVolume(newVolume)
+    await queue.setVolume(newVolume)
 
     // check current song and reply
 

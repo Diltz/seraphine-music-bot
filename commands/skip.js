@@ -15,8 +15,12 @@ execute = async (client, interaction, distube) => {
 
     // skip song
 
-    await queue.skip()
-
+    if (queue.songs.length === 1) {
+        await queue.stop()
+    } else {
+        await queue.skip()
+    }
+    
     // reply
 
     interaction.reply(`Песня пропущена!`)
