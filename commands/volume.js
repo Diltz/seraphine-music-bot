@@ -29,7 +29,7 @@ execute = async (client, interaction, distube) => {
     // check current song and reply
 
     interaction.reply(`Громкость установлена на ${newVolume}`)
-    client.user.setActivity({type: ActivityType.Listening, name: `Громкость: ${newVolume}`})
+    client.user.setActivity({type: ActivityType.Listening, name: `Я пою на ${newVolume} громкости!`})
 }
 
 // exports

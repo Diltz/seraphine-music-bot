@@ -1,3 +1,4 @@
 {
-    "maxVolume": 150
+    "maxVolume": 150,
+    "defaultVolume": 75
 }

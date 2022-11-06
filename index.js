@@ -27,6 +27,7 @@ dotenv.config()
 
 //
 
+const bot_config = require("./config.json")
 var token = process.env.BOT_TOKEN
 var clientid = process.env.CLIENT_ID
 
@@ -64,6 +65,8 @@ const distube = new DisTube(bot, {
 	leaveOnStop: false
 })
 
+distube.setVolume(bot_config.defaultVolume)
+
 // distube events
 
 distube.on("error", (channel, error) => {
@@ -100,6 +103,10 @@ bot.on('error', error => {
 // ready event
 
 bot.on("ready", async (client) => {
+    // activity
+
+    client.user.setActivity({type: ActivityType.Listening, name: `Я пою на ${bot_config.defaultVolume} громкости!`})
+
     // commands
 
     var commandsPath = __dirname + "/commands"
