@@ -31,6 +31,10 @@ const bot_config = require("./config.json")
 var token = process.env.BOT_TOKEN
 var clientid = process.env.CLIENT_ID
 
+// seraphine phrases
+
+const phrases = require("./phrases.json")
+
 // commands
 
 const commandsPath = __dirname + "/commands"
@@ -72,9 +76,13 @@ distube.on("error", (channel, error) => {
     channel.send("Ошибка загрузки музыки!")
 })
 
+distube.on("finish", (queue) => {
+    queue.textChannel.send(phrases.onFinish[Math.floor(Math.random() * phrases.onFinish.length)])
+})
+
 distube.on("playSong", (queue, song) => {
     queue.textChannel.send(`Играет: **${song.name}**\nНа канале: ${queue.voiceChannel}\nЗапросил: **${song.member.nickname}**`)
-    client.user.setActivity({type: ActivityType.Listening, name: song.name})
+    bot.user.setActivity({type: ActivityType.Listening, name: song.name})
 })
 
 distube.on("addSong", (queue, song) => {
@@ -104,7 +112,7 @@ bot.on('error', error => {
 bot.on("ready", async (client) => {
     // activity
 
-    client.user.setActivity({type: ActivityType.Listening, name: `Я готова петь!`})
+    client.user.setActivity({type: ActivityType.Listening, name: "Я снова готова петь!"})
 
     // commands
 

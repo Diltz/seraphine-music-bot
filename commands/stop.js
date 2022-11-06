@@ -2,6 +2,10 @@
 
 const {SlashCommandBuilder} = require("discord.js")
 
+// seraphine phrases
+
+const phrases = require("../phrases.json")
+
 //
 
 execute = async (client, interaction, distube) => {
@@ -19,7 +23,7 @@ execute = async (client, interaction, distube) => {
 
     // check current song and reply
 
-    interaction.reply(`Музыка остановлена и очередь была очищена`)
+    interaction.reply(phrases.onStop[Math.floor(Math.random() * phrases.onStop.length)])
 }
 
 // exports

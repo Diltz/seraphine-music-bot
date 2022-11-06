@@ -4,7 +4,7 @@ const {SlashCommandBuilder} = require("discord.js")
 
 //
 
-execute = async (client, interaction, distube) => {
+execute = async (_client, interaction, distube) => {
     const member = interaction.member
     const textChannel = interaction.channel
     const voiceState = member.voice
@@ -21,7 +21,9 @@ execute = async (client, interaction, distube) => {
         interaction,
         textChannel: textChannel,
         member: member,
-    }).then().catch((err) => {
+    }).then(() => {
+        console.log("Song loaded!")
+    }).catch((err) => {
         console.error(err)
         
         textChannel.send(`Не удалось загрузить музыку!\n**${err}**`)
