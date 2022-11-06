@@ -65,8 +65,6 @@ const distube = new DisTube(bot, {
 	leaveOnStop: false
 })
 
-distube.setVolume(bot_config.defaultVolume)
-
 // distube events
 
 distube.on("error", (channel, error) => {
@@ -105,7 +103,7 @@ bot.on('error', error => {
 bot.on("ready", async (client) => {
     // activity
 
-    client.user.setActivity({type: ActivityType.Listening, name: `Я пою на ${bot_config.defaultVolume} громкости!`})
+    client.user.setActivity({type: ActivityType.Listening, name: `Я готова петь!`})
 
     // commands
 
