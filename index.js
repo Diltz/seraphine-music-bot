@@ -74,6 +74,7 @@ distube.on("error", (channel, error) => {
 
 distube.on("playSong", (queue, song) => {
     queue.textChannel.send(`Играет: **${song.name}**\nНа канале: ${queue.voiceChannel}\nЗапросил: **${song.member.nickname}**`)
+    client.user.setActivity({type: ActivityType.Listening, name: song.name})
 })
 
 distube.on("addSong", (queue, song) => {
