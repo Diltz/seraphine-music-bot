@@ -39,9 +39,9 @@ You want bot to support age restricted videos/songs? Then rename **yt-token.test
 module.exports = "your youtube cookie"
 ``
 #### How to get token?
-Open Network tab on [YouTube](youtube.com)
 <ol>
+  <li>Go to youtube.com</li>
   <li>Open developer mode</li>
-  <li>Open Network tab on [YouTube](youtube.com)</li>
+  <li>Open Network tab on youtube.com</li>
   <li>Copy whole cookie request header</li>
 </ol>
