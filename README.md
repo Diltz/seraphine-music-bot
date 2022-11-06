@@ -2,6 +2,9 @@
 My first discord's music bot.
 This bot uses [Distube](https://distube.js.org) library to function. Really nice wrapper.
 
+# License
+My project is protected under MIT License. You can edit code in any way you want, sell, distribute. But you must put me in a credit.
+
 # Requirements
 <ol>
   <li>Node.js Version 18+</li>
