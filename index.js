@@ -80,7 +80,7 @@ distube.on("addSong", (queue, song) => {
         return
     }
 
-    queue.textChannel.send(`${song.member.nickname}, песня **${song.name}** добавлена в очередь!`)
+    queue.textChannel.send(`${song.member}, песня **${song.name}** добавлена в очередь!`)
 })
 
 distube.on("searchNoResult", (message) => {
@@ -88,7 +88,7 @@ distube.on("searchNoResult", (message) => {
 })
 
 distube.on("addList", (queue, playlist) => {
-    queue.textChannel.send(`${playlist.member.nickname}, плейлист **${playlist.name}** добавлен в очередь!`)
+    queue.textChannel.send(`${playlist.member}, плейлист **${playlist.name}** добавлен в очередь!`)
 })
 
 // catch bot error
