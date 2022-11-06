@@ -1,0 +1,9 @@
+version: '3.18'
+services:
+  node:
+    image: node:18-alpine
+  
+  main:
+    container_name: "102music"
+    build: .
+    env_file: .env
