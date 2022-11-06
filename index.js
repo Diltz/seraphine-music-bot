@@ -10,7 +10,7 @@ const fs = require("fs");
 
 // check support
 
-generateDependencyReport()
+console.log(generateDependencyReport())
 
 // .env & yt cookie
 
