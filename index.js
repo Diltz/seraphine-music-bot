@@ -7,7 +7,10 @@ const { SoundCloudPlugin } = require('@distube/soundcloud');
 const { SpotifyPlugin } = require('@distube/spotify');
 const dotenv = require("dotenv")
 const fs = require("fs");
-const { channel } = require('diagnostics_channel');
+
+// check support
+
+generateDependencyReport()
 
 // .env & yt cookie
 
@@ -46,8 +49,8 @@ const spotifyPlugin = new SpotifyPlugin({
     parallel: true,
     emitEventsAfterFetching: false,
     api: {
-        clientId: "714f979053e04467bf39ed9766e657b1",
-        clientSecret: "5da1d52a04d24870a107c061fa85ab97",
+        clientId: process.env.SPOTIFY_CLIENT_ID,
+        clientSecret: process.env.SPOTIFY_SECRET,
     },
 })
 
