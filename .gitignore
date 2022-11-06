@@ -1,3 +1,6 @@
+# yt token
+yt-token.js
+
 # Logs
 logs
 *.log
@@ -70,7 +73,6 @@ typings/
 
 # dotenv environment variables file
 .env
-.env.test
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -102,3 +104,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Visual Studio files
+.vs
+
+# License file
+LICENSE
