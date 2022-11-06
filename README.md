@@ -1,5 +1,6 @@
 # discord-music-bot
 My first discord's music bot.
+This bot uses https://distube.js.org library to function. Really nice wrapper.
 
 # Requirements
 <ol>
