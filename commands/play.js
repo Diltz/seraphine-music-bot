@@ -26,7 +26,7 @@ execute = async (_client, interaction, distube) => {
     }).catch((err) => {
         console.error(err)
         
-        textChannel.send(`Не удалось загрузить музыку!\n**${err}**`)
+        textChannel.send(`Не удалось загрузить музыку!`)
     })
 }
 
