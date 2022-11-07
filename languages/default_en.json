@@ -1,0 +1,52 @@
+{
+    "phrases": {
+        "onFinish": [
+            "That's the end of this performance. Encore's comin' up!",
+            "You've all been a wonderful audience. Thank you!",
+            "Next time, I wanna see all of you on stage!"
+        ],
+    
+        "onStop": [
+            "Show's not over...",
+            "Keep singing...!",
+            "Not a fan..."
+        ]
+    },
+
+    "failedToLoadCommand": "Failed to load command!",
+    "failedRunCommand": "Failed to run command!",
+
+    "errorEvent": "Failed to load!",
+    "playSongEvent": "Now playing: **{songName}**\nChannel: {voiceChannel}\nRequested by: **{userName}**",
+    "finishEvent": "Finished playing music",
+    "addSongEvent": "{member}, song **{songName}** added to queue!",
+    "searchNoResultEvent": "I couldn't find anything!",
+    "addListEvent": "{member}, playlist **{playlistName}** added to queue!",
+
+    "nowNothingInQueue": "There is nothing playing right now!",
+    "nowPlaying": "Now playing: {song}",
+    "nowDescription": "Current playing song",
+    
+    "playArgument": "song",
+    "playArgumentDescription": "Link/Name's song",
+    "playNotInVoiceChannel": "You must be in a VC to play music!",
+    "playInteractionReply": "Loading..",
+    "playFailedToLoadSong": "Failed to load song!",
+    "playDescription": "Play song",
+
+    "queueNotPlaying": "There is nothing playing right now!",
+    "queuePlayingNow": "Now playing",
+    "queueResult": "Канал: {channel}\nQueue:\n{queue}",
+    "queueDescription": "Lists current song queue",
+
+    "skipNotPlaying": "There is nothing playing right now!",
+    "skipInteractionReply": "Now playing",
+    "skipDescription": "Skip song",
+
+    "volumeArgument": "volume",
+    "volumeArgumentDescription": "New volume",
+    "volumeNotPlaying": "There is nothing playing right now!",
+    "volumeInteractionReply": "Volume has been set to {newVolume}",
+    "volumeIncorrentInput": "The volume can be set from 0 to {maxVolume}",
+    "volumeDescription": "Set music volume"
+}
