@@ -28,7 +28,7 @@ My project is protected under MIT License. You can edit code in any way you want
 
 # Additional steps
 ## Spotify support
-You want bot catch some songs from Spotify? Then configure next values in .env
+You want bot to support links from Spotify? Then configure next values in .env
 
 <ol>
   <li>SPOTIFY_CLIENT_ID</li>
