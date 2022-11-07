@@ -66,7 +66,7 @@ const distube = new DisTube(bot, {
 	searchCooldown: 30,
 	leaveOnEmpty: false,
 	leaveOnFinish: false,
-	leaveOnStop: false
+	leaveOnStop: true
 })
 
 // distube events
@@ -112,7 +112,7 @@ bot.on('error', error => {
 bot.on("ready", async (client) => {
     // activity
 
-    client.user.setActivity({type: ActivityType.Listening, name: "Я снова готова петь!"})
+    client.user.setActivity({type: ActivityType.Listening, name: `${client.guilds.cache.size} servers`})
 
     // commands
 
