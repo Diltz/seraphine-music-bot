@@ -81,7 +81,7 @@ distube.on("finish", (queue) => {
 })
 
 distube.on("playSong", (queue, song) => {
-    queue.textChannel.send(`Играет: **${song.name}**\nНа канале: ${queue.voiceChannel}\nЗапросил: **${song.member.nickname}**`)
+    queue.textChannel.send(`Играет: **${song.name}**\nНа канале: ${queue.voiceChannel || "?"}\nЗапросил: **${song.member.nickname || song.member.user.tag}**`)
     bot.user.setActivity({type: ActivityType.Listening, name: song.name})
 })
 
