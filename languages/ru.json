@@ -1,0 +1,54 @@
+{
+    "phrases": {
+        "onFinish": [
+            "Концерт окончен! Приходите на следующий.",
+            "Спасибо за тёплый приём! Спасибо!",
+            "В следующий раз я хочу видеть вас на сцене!"
+        ],
+    
+        "onStop": [
+            "Концерт не окончен.",
+            "Нужно… петь.",
+            "Тебе не понравилось?.."
+        ],
+
+        "guildCreate": "Привет, мир! Я – Серафина, а вы прекрасены."
+    },
+
+    "failedToLoadCommand": "Не удалось загрузить команлу!",
+    "failedRunCommand": "Ошибка при запуске команды!",
+
+    "errorEvent": "Ошибка загрузки!",
+    "playSongEvent": "Сейчас играет: **{songName}**\nКанал: {voiceChannel}\nЗапросил: **{userName}**",
+    "finishEvent": "Музыка закончилась",
+    "addSongEvent": "{member}, песня **{songName}** добавлена в очередь!",
+    "searchNoResultEvent": "Я ничего не нашла!",
+    "addListEvent": "{member}, плейлист **{playlistName}** добавлен в очередь!",
+
+    "nowNothingInQueue": "Сейчас ничего не играет!",
+    "nowPlaying": "Сейчас играет: {song}",
+    "nowDescription": "Что сейчас играет?",
+    
+    "playArgument": "песня",
+    "playArgumentDescription": "Ссылка/Название песни",
+    "playNotInVoiceChannel": "Ты должны быть в голосовом канале!",
+    "playInteractionReply": "Загрузка..",
+    "playFailedToLoadSong": "Не удалось загрузить песню!",
+    "playDescription": "Сыграть песню",
+
+    "queueNotPlaying": "Сейчас ничего не играет!",
+    "queuePlayingNow": "Сейчас играет",
+    "queueResult": "Канал: {channel}\nОчередь:\n{queue}",
+    "queueDescription": "Отображает текущую очередь",
+
+    "skipNotPlaying": "Сейчас ничего не играет!",
+    "skipInteractionReply": "Песня пропущена!",
+    "skipDescription": "Пропустить песню",
+
+    "volumeArgument": "громкость",
+    "volumeArgumentDescription": "Новая громоксть",
+    "volumeNotPlaying": "Я не могу изменить громокость, пока ничего не играет!",
+    "volumeInteractionReply": "Громкость установлена на {newVolume}",
+    "volumeIncorrentInput": "Громкость можно установить от 0 до {maxVolume}",
+    "volumeDescription": "Установить громкость музыки"
+}

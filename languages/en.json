@@ -10,7 +10,9 @@
             "Show's not over...",
             "Keep singing...!",
             "Not a fan..."
-        ]
+        ],
+
+        "guildCreate": "Hello, world! I'm Seraphine, and you are beautiful!"
     },
 
     "failedToLoadCommand": "Failed to load command!",
@@ -36,7 +38,7 @@
 
     "queueNotPlaying": "There is nothing playing right now!",
     "queuePlayingNow": "Now playing",
-    "queueResult": "Канал: {channel}\nQueue:\n{queue}",
+    "queueResult": "Channel: {channel}\nQueue:\n{queue}",
     "queueDescription": "Lists current song queue",
 
     "skipNotPlaying": "There is nothing playing right now!",
