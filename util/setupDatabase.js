@@ -14,4 +14,5 @@ module.exports = async () => {
     })
 
     await connection.query("CREATE TABLE IF NOT EXISTS `servers` (guildId TEXT, isPremium BOOLEAN, language VARCHAR(2))")
+    await connection.end()
 }
