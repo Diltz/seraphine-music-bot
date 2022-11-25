@@ -9,6 +9,7 @@
     "distube": "^4.0.4",
     "dotenv": "^16.0.3",
     "libsodium-wrappers": "^0.7.10",
+    "mariadb": "^3.0.2",
     "mongoose": "^6.7.1",
     "opusscript": "^0.0.8",
     "tweetnacl": "^1.0.3"

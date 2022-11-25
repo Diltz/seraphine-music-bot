@@ -2,11 +2,11 @@
 
 const { generateDependencyReport } = require('@discordjs/voice')
 const { REST, Routes, Client, ActivityType} = require("discord.js")
-const { DisTube } = require('distube');
-const { SoundCloudPlugin } = require('@distube/soundcloud');
-const { SpotifyPlugin } = require('@distube/spotify');
+const { DisTube } = require('distube')
+const { SoundCloudPlugin } = require('@distube/soundcloud')
+const { SpotifyPlugin } = require('@distube/spotify')
 const dotenv = require("dotenv")
-const fs = require("fs");
+const fs = require("fs")
 
 // check support
 
@@ -35,12 +35,29 @@ var clientid = process.env.CLIENT_ID
 
 const phrases = require("./phrases.json")
 
+// util
+
+const utilPath = __dirname + "/util"
+
+// languages
+
+const en_strings = require("./languages/en.json")
+
 // commands
 
 const commandsPath = __dirname + "/commands"
 var commandsBody = {
     body: [],
     runners: {}
+}
+
+// init database
+
+try {
+    require(`${utilPath}/setupDatabase.js`)()
+} catch (error) {
+    console.error(error)
+    process.exit(2)
 }
 
 //
@@ -61,11 +78,11 @@ const spotifyPlugin = new SpotifyPlugin({
 
 const distube = new DisTube(bot, {
     plugins: [spotifyPlugin, new SoundCloudPlugin()],
-    youtubeCookie: ytCookie || null,
+    youtubeCookie: ytCookie,
 	searchSongs: 5,
 	searchCooldown: 30,
-	leaveOnEmpty: false,
-	leaveOnFinish: false,
+	leaveOnEmpty: true,
+	leaveOnFinish: true,
 	leaveOnStop: true
 })
 
@@ -78,11 +95,11 @@ distube.on("error", (channel, error) => {
 
 distube.on("finish", (queue) => {
     queue.textChannel.send(phrases.onFinish[Math.floor(Math.random() * phrases.onFinish.length)])
+    client.user.setActivity({type: ActivityType.Listening, name: `${client.guilds.cache.size} servers`})
 })
 
 distube.on("playSong", (queue, song) => {
-    queue.textChannel.send(`Играет: **${song.name}**\nНа канале: ${queue.voiceChannel || "?"}\nЗапросил: **${song.member.nickname || song.member.user.tag}**`)
-    bot.user.setActivity({type: ActivityType.Listening, name: song.name})
+    queue.textChannel.send(`Играет: **${song.name}**\nНа канале: ${queue.voiceChannel || "?"}\nЗапросил: **${song.member.nickname || song.member.user.username}**`)
 })
 
 distube.on("addSong", (queue, song) => {
@@ -105,7 +122,20 @@ distube.on("addList", (queue, playlist) => {
 
 bot.on('error', error => {
     console.error('The WebSocket encountered an error:', error);
-});
+})
+
+// guild create event
+
+bot.on("guildCreate", async (guild) => {
+    // add record into db
+
+    await require(`${utilPath}/addServer.js`)(guild.id)
+
+    //
+
+    bot.user.setActivity({type: ActivityType.Listening, name: `${bot.guilds.cache.size} servers`})
+    guild.systemChannel.send({content: `Thanks for adding me to this server. If you want to change my language use **/language**\n\n${en_strings.phrases.guildCreate}`})
+})
 
 // ready event
 
