@@ -95,7 +95,7 @@ distube.on("error", (channel, error) => {
 
 distube.on("finish", (queue) => {
     queue.textChannel.send(phrases.onFinish[Math.floor(Math.random() * phrases.onFinish.length)])
-    bot.user.setActivity({type: ActivityType.Listening, name: `${client.guilds.cache.size} servers`})
+    bot.user.setActivity({type: ActivityType.Listening, name: `${bot.guilds.cache.size} servers`})
 })
 
 distube.on("playSong", (queue, song) => {
